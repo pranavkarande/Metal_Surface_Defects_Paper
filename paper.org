@@ -1,0 +1,47 @@
+#+TITLE: *Classification of Metal Surface Defects using Convolutional Neural Network*
+#+AUTHOR:
+#+LaTeX_class: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt, twocolumn]
+#+LATEX_HEADER: \usepackage[margin=0.7in]{geometry}
+#+OPTIONS: toc:nil
+
+#+LATEX_HEADER: \include{~/code/ML/Document/authors.tex}
+
+#+BEGIN_abstract
+The implementation of defect detection depends on a special detection dataset. In this paper, we proposed a novel defect detection system based on deep learning and focused on a practical industrial application: steel plate defect inspection. In order to achieve strong classification-ability, this system employs a baseline convolution neural network (CNN). We explore optimized values of parameters using the Sequential Convolutional Neural Network model to classify the defects correctly without causing over-fitting.
+#+END_abstract
+
+* Introduction
+Steel is one of the most important building materials of modern times and the production process of flat sheet steel is complicated. Before shipping or delivering steel, sheets need to undergo a careful inspection procedure to avoid defects and thus localizing and classifying surface defects on a steel sheet is crucial. In this study, we advance the steel defect inspection methods by designing machine learning models that aim to detect multi-level defects from sample steel sheet images and classify them according to their corresponding classes. This paper presents a simplified approach to serve the above purpose using the basic Machine Learning (ML) packages such as TensorFlow and Keras.
+* Related Work
+
+* Dataset
+NEU surface defect 1 is a defect classification dataset that we opened seven years ago [3]. There are six types of defects from hot-rolled steel plates, including crazing, inclusion, patches, pitted surface, rolled-in scales and scratches. Each class has 300 images, but it does not mean that an image consists of a single defect. Examples of defect images are shown in Fig. 5.
+
+* Incorporated Packages
+** Tensorflow
+TensorFlow, an interface for expressing machine learning algorithms, is utilized for implementing ML systems into fab- rication over a bunch of areas of computer science, including sentiment analysis, voice recognition, geographic information extraction, computer vision, text summarization, information retrieval, computational drug discovery and flaw detection to pursue research [18]. In the proposed model, the whole Sequential CNN architecture (consists of several layers) uses TensorFlow at backend. It is also used to reshape the data (image) in the data processing.
+** Keras
+Keras gives fundamental reflections and building units for creation and transportation of ML arrangements with high iteration velocity. It takes full advantage of the scalability and cross-platform capabilities of TensorFlow. The core data structures of Keras are layers and models [19]. All the layers used in the CNN model are implemented using Keras. Along with the conversion of the class vector to the binary class matrix in data processing, it helps to compile the overall model.
+
+* Training
+Training the CNN model required _ Steps:
+** Setting Up the Data
+Although the data was already in the splitted format, the contents of the data were again altered. Three directories - Training, Testing and Validation were created and in the training and validation directories 6 directories, each representing one class label were added in which the respective images were stored. /The data was split in three ways during training : [80 - 20, 75- 25 and 85-15]./
+However, a slight change was made in the testing directory, which initially had images split based on classes. This directory was converted such that it only has a randm set of images that are not seperated by class labels.
+** Image Augmentation
+Once the data from the directory is read, ImageDataGenerator is used to augment the images as per requirement to icrease the scale of training and prepare better scnarios for the model to train
+#Code Snippet of Data Generator
+** Creating The Model
+Now, to start training, the CNN model was created using Sequentia() function in Tensorflow and the model Architecture was built as follows:
+#Model SS
+The Model can be visualized as follows using visualkeras and PIL:
+#Architecture SS
+** Setting the Epochs and Steps per Epoch
+This step required the most trial and error as every time the model is run, there is slight difference in the validation accuracy achieved. To beat the current Threshhold of 98.6% accuracy,the training using model.fit_generator() function was done multiple times changing the epochs, steps per epoch and validation steps. To come out of this loophole of Training multiple times, Keras Tuner was used for Model Optimization
+
+* Testing
+
+* Conclusion
+
+* References
