@@ -16,7 +16,7 @@ Steel is one of the most important building materials of modern times and the pr
 * Related Work
 
 * Dataset
-NEU surface defect 1 is a defect classification dataset that we opened seven years ago [3]. There are six types of defects from hot-rolled steel plates, including crazing, inclusion, patches, pitted surface, rolled-in scales and scratches. Each class has 300 images, but it does not mean that an image consists of a single defect. Examples of defect images are shown in Fig. 5.
+NEU surface defects dataset is a defect classification dataset that consists of six types of defects from hot-rolled steel plates, including crazing, inclusion, patches, pitted surface, rolled-in scales and scratches. Each class has 300 images, but it does not mean that an image consists of a single defect. Each image is a 224x224 RGB image . In any image, a steel sheet with some kind of defect can be seen. This data is splitted for training which is dscribed in the Training section. Examples of defect images are shown in Fig. 5.
 
 * Incorporated Packages
 ** Tensorflow
