@@ -45,6 +45,8 @@ The Model can be visualized as follows using visualkeras and PIL:
 #Architecture SS
 ** Setting the Epochs and Steps per Epoch
 This step required the most trial and error as every time the model is run, there is slight difference in the validation accuracy achieved. To beat the current Threshhold of 98.6% accuracy,the training using model.fit_generator() function was done multiple times changing the epochs, steps per epoch and validation steps. To come out of this loophole of Training multiple times, Keras Tuner was used for Model Optimization
+** Setting Up the GPU 
+To make the training process faster and more efficient, there was a need to set up the GPU in the laptop. 
 
 * Testing
 
