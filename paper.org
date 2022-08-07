@@ -24,6 +24,12 @@ TensorFlow, an interface for expressing machine learning algorithms, is utilized
 ** Keras
 Keras gives fundamental reflections and building units for creation and transportation of ML arrangements with high iteration velocity. It takes full advantage of the scalability and cross-platform capabilities of TensorFlow. The core data structures of Keras are layers and models [19]. All the layers used in the CNN model are implemented using Keras. Along with the conversion of the class vector to the binary class matrix in data processing, it helps to compile the overall model.
 
+** Pyplot
+Pyplot is a part of Matplotlib Python library. It was used to print the image in the script and check its dimensions to feed them into the neural network.
+
+** VisualKeras
+Visualkeras library was used to plot the arcjitecture of the designed CNN model .
+
 * Training
 Training the CNN model required _ Steps:
 ** Setting Up the Data
