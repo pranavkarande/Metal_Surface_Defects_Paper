@@ -30,10 +30,10 @@ Training the CNN model required _ Steps:
 Although the data was already in the splitted format, the contents of the data were again altered. Three directories - Training, Testing and Validation were created and in the training and validation directories 6 directories, each representing one class label were added in which the respective images were stored. /The data was split in three ways during training : [80 - 20, 75- 25 and 85-15]./
 However, a slight change was made in the testing directory, which initially had images split based on classes. This directory was converted such that it only has a randm set of images that are not seperated by class labels.
 ** Image Augmentation
-Once the data from the directory is read, ImageDataGenerator is used to augment the images as per requirement to icrease the scale of training and prepare better scnarios for the model to train
+Once the data from the directory is read, ImageDataGenerator is used to augment the images as per requirement to icrease the scale of training and prepare better scenarios for the model to train. The images were rescaled by a factor of 1/255 . The augmentation of images was done in form of horizontal and vertical flips, rotations in the range of 0 degree to 30 degrees, horizontal shear , width shift as well as height shift. 
 #Code Snippet of Data Generator
 ** Creating The Model
-Now, to start training, the CNN model was created using Sequentia() function in Tensorflow and the model Architecture was built as follows:
+Now, to start training, the CNN model was created using Sequential() function in Tensorflow and the model Architecture was built as follows:
 #Model SS
 The Model can be visualized as follows using visualkeras and PIL:
 #Architecture SS
