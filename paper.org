@@ -50,8 +50,14 @@ This step required the most trial and error as every time the model is run, ther
 ** Setting Up the GPU 
 To make the training process faster and more efficient, there was a need to set up the GPU in the laptop. 
 
-* Testing
-
+* Testing and Result
+A seperate set of images that is not a part of the training data was kept for testing to make sure that the model is not an overfit on the training data. 
+The Convolutional Neural Network designed for the training of this dataset consisted of 3 convolution and maxpool layers, 2 dense (fully connected )layers and 2   
+dropout layers with a dropout rate of 0.2. The model was trained using Model.fit_generator() function as image augmentation was done using ImageDataGenerator library.
+With the Nvidia GTX 1650-Ti GPU, the model took 15 miutes to run completely and give an accuracy of 99.3%.
+Once the training is complete, the OS library was used to move to the directory with the testing images. Model.predict() function was used get a class labels vector as an output which had 0s except for one index which was 1, indicating presence of that defect. The testing dataset consisted of 72 images (12 for each class) and while testing, 68/72 predictions were correctly made by the model. Thus, since the vaidation accuracy was 99.3% and the testing accuracy is also around 95%, it can be said that the model is not an overfit on the training data. 
+The model consisting of only 13 layers was able to provide a 99.3% accuracy without causing any overfitting. Thus, this model can be a very good model for Low-End systems that cannot run huge models like Res-Net 50+ or VGG19 for their data. 
+ 
 * Conclusion
 
 * References
