@@ -40,7 +40,7 @@ Once the data from the directory is read, ImageDataGenerator is used to augment 
 #Code Snippet of Data Generator
 ** Creating The Model
 Now, to start training, the CNN model was created using Sequential() function in Tensorflow and the model Architecture was built as follows:
-#Model SS
+ - 
 The Model can be visualized as follows using visualkeras and PIL:
 #Architecture SS
 ** Setting the Epochs and Steps per Epoch
