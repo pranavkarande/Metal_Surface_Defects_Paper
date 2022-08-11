@@ -32,7 +32,7 @@ Pyplot is a part of Matplotlib Python library. It was used to print the image in
 ** VisualKeras
 Visualkeras library was used to plot the arcjitecture of the designed CNN model .
 
-**OS
+** OS
 The OS library was used to traverse through the image directory for training, EDA as well as testing purposes.
 
 * Training
