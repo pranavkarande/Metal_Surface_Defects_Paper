@@ -15,7 +15,6 @@ The implementation of defect detection depends on a special detection dataset. I
 Steel is one of the most important building materials of modern times and the production process of flat sheet steel is complicated. Before shipping or delivering steel, sheets need to undergo a careful inspection procedure to avoid defects and thus localizing and classifying surface defects on a steel sheet is crucial.  Typically, in steel mills, human inspectors manually perform the defect detection process on steel sheets. However, this procedure is very time consuming, costly but
 lower efficient and does not meet up the requirement of realtime online defect detection. Further, with the rise of Automation, IoT and Robotics, the need for software to be able to make trivial jobs like defect detetion and classification autonomous has increased. The defect detection system in steel sheet surfaces is playing a critical role in the steel sheets industry by detecting, localizing, recognizing and subsequently correcting causative factors. It is also quite necessary for controlling product quality and generating real-time analysis reports. Detecting process involves determining the existence of the steel surface defects from images taken from the industrial cameras.
 In this study, we advance the steel defect inspection methods by designing machine learning models that aim to detect multi-level defects from sample steel sheet images and classify them according to their corresponding classes. This paper presents a simplified approach to serve the above purpose using the basic Machine Learning (ML) packages such as TensorFlow and Keras.
-* Related Work
 
 * Dataset
 NEU surface defects dataset is a defect classification dataset that consists of six types of defects from hot-rolled steel plates, including crazing, inclusion, patches, pitted surface, rolled-in scales and scratches. Each class has 300 images (1800 images in total), but it does not mean that an image consists of a single defect. Each image is a 224x224 grayscale image . In any image, a steel sheet with some kind of defect can be seen. This data is splitted for training which is dscribed in the Training section. Examples of defect images are shown in Fig. 5.
@@ -46,7 +45,7 @@ Once the data from the directory is read, ImageDataGenerator is used to augment 
 ** Creating The Model
 Now, to start training, the CNN model was created using Sequential() function in Tensorflow and the model Architecture was built as follows:
  - 
-The Model can be visualized as follows using visualkeras and PIL:
+The Model can be visualized as follows using visualkeras and PIL:[[./WhatsApp Image 2022-07-22 at 10.07.41 AM.jpeg]]
 #Architecture SS
 ** Setting the Epochs and Steps per Epoch
 This step required the most trial and error as every time the model is run, there is slight difference in the validation accuracy achieved. To beat the current Threshhold of 98.6% accuracy,the training using model.fit_generator() function was done multiple times changing the epochs, steps per epoch and validation steps. To come out of this loophole of Training multiple times, Keras Tuner was used for Model Optimization
@@ -60,6 +59,7 @@ dropout layers with a dropout rate of 0.2. The model was trained using Model.fit
 With the Nvidia GTX 1650-Ti GPU, the model took 15 miutes to run completely and give an accuracy of 99.3%.
 Once the training is complete, the OS library was used to move to the directory with the testing images. Model.predict() function was used get a class labels vector as an output which had 0s except for one index which was 1, indicating presence of that defect. The testing dataset consisted of 72 images (12 for each class) and while testing, 68/72 predictions were correctly made by the model. Thus, since the vaidation accuracy was 99.3% and the testing accuracy is also around 95%, it can be said that the model is not an overfit on the training data. 
 The model consisting of only 13 layers was able to provide a 99.3% accuracy without causing any overfitting. Thus, this model can be a very good model for Low-End systems that cannot run huge models like Res-Net 50+ or VGG19 for their data. 
+[[./WhatsApp Image 2022-08-11 at 8.17.36 AM.jpeg]]
 
 * Experiments and Analysis
 In search of a good valisation accuracy, we engaged in multiple experiments on out CNN model and Dataset . 
